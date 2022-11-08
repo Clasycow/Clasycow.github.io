@@ -22,5 +22,7 @@ Backround Images: https://twitter.com/Pikfreeir/status/1257928152501846016
 
 ................  https://geekflare.com/wp-content/uploads/2021/01/javascript-functions-1200x385.jpg
 
+................  https://media.istockphoto.com/photos/deep-space-picture-id472809828?b=1&k=20&m=472809828&s=170667a&w=0&h=goMd2OYeK7iAw-c4FdfaRECqjatgw84mgVTx38sBAtE
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
