@@ -4,8 +4,8 @@
 	transform: scale(0.50);
 	overflow: hidden;
 	display: grid;
-	grid-template-columns: repeat(1, 800px) 15px; 
-	grid-template-rows: 500px 90px 4px;
+	grid-template-columns: repeat(1, 1100px) 15px; 
+	grid-template-rows: 350px 20px 4px;
 	box-shadow:
 		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
