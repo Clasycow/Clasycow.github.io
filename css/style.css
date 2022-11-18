@@ -20,6 +20,17 @@ a:link {
   margin-left: 370px;
 }
 
+.profile{
+	position: relative;
+	font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0rem;
+  overflow: hidden;
+  margin-left: 450px;
+  top: 60px;
+}
+
 .container .cards .imgBx {
   position: absolute;
   top: 0;

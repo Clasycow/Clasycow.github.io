@@ -1,8 +1,8 @@
 :root {
-  --border: rgb(3, 169, 244);
+  --border: rgb(30, 30, 214);
   
-  --g1: rgb(98, 0, 234);
-  --g2: rgb(236, 64, 122);
+  --g1: rgb(30, 30, 214);
+  --g2: rgb(236, 64, 100);
   --g3: rgb(253, 216, 53);
 }
 
@@ -11,7 +11,8 @@
   border: 0.5vmin solid var(--border);
   cursor: pointer;
   position: relative;
-  width: 56vmin;
+  width: 50vmin;
+  margin-left: 50px;
 }
 
 .text-card:hover:before {
@@ -88,7 +89,7 @@
 
 .text-card-subtitle-word {
   display: inline-block;
-  margin: 0vmin 0.3vmin;
+  margin: 0.3vmin 0.4vmin;
   opacity: 0;
   position: relative;  
   transform: translateY(40%);

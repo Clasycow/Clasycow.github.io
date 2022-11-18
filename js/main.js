@@ -7,7 +7,7 @@
 	//
 	function handlePreloader() {
 		if($('.preloader').length){
-			$('.preloader').delay(800).fadeOut(200);
+			$('.preloader').delay(400).fadeOut(200);
 		}
 	}
 	//
