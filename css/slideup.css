@@ -186,10 +186,22 @@ section .text-container .text-box h3{
   position: relative;
   transform: translateY(150px);
   opacity: 0;
-  transition: 1s all ease;
+  transition: 1.5s all ease;
 }
 
 .reveal.active{
   transform: translateY(0);
+  opacity: 1;
+}
+
+.card-reveal{
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 1.5s all ease;
+}
+
+.card-reveal.active{
+  transform: translateX(0);
   opacity: 1;
 }

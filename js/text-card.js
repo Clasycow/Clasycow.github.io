@@ -16,4 +16,4 @@ const addWord = (text, index) => subtitle.appendChild(createWord(text, index));
 
 const createSubtitle = text => text.split(" ").map(addWord);
 
-createSubtitle("But By Adding CSS, Bulma, and JavaScript, I Also Add A Little Pizazze To It.");
+createSubtitle("But By Adding CSS, Bulma, and JavaScript, I Like Adding A Little Pizazze To It.");
