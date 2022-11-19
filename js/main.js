@@ -7,7 +7,7 @@
 	//
 	function handlePreloader() {
 		if($('.preloader').length){
-			$('.preloader').delay(400).fadeOut(200);
+			$('.preloader').delay(600).fadeOut(400);
 		}
 	}
 	//
@@ -25,7 +25,7 @@
 				scrollLink.fadeIn(300);
 			} else {
 				siteHeader.removeClass('fixed-header');
-				scrollLink.fadeOut(300);
+				scrollLink.fadeOut(600);
 			}
 		}
 	}
