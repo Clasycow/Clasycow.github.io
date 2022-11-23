@@ -16,4 +16,4 @@ const addWord = (text, index) => subtitle.appendChild(createWord(text, index));
 
 const createSubtitle = text => text.split(" ").map(addWord);
 
-createSubtitle("And Modernism With The Help Of JavaScript And CSS.");
+createSubtitle("But With A Touch Of Modernism With The Help Of JavaScript And CSS.");
