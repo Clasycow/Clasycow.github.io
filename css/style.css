@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
 
 body{
- background: #060606
+ background: #000000
 }
 
 /* unvisited link */
@@ -14,7 +14,7 @@ a:link {
   position: relative;
   width: 350px;
   height: 400px;
-  background: linear-gradient(#333333, #333333 30%, #222222 30%, #222222);
+  background: linear-gradient(#111111, #111111 30%, #111111 30%, #111111);
   border-radius: 20px;
   overflow: hidden;
   margin-left: 370px;
@@ -28,8 +28,68 @@ a:link {
   letter-spacing: 0rem;
   overflow: hidden;
   margin-left: 590px;
-  bottom: 1320px;
+  bottom: 1250px;
 }
+
+@mixin center() {
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+  html {
+	width: 100%;
+	height: 100%;
+  }
+  body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Raleway", sans-serif;
+  }
+  
+  .title {
+	font-weight: 800;
+	color: transparent;
+	font-size: 120px;
+	background: url("https://media.istockphoto.com/photos/deep-space-picture-id472809828?b=1&k=20&m=472809828&s=170667a&w=0&h=goMd2OYeK7iAw-c4FdfaRECqjatgw84mgVTx38sBAtE=")
+	  repeat;
+	background-position: 50% 50%;
+	-webkit-background-clip: text;
+	position: relative;
+	text-align: center;
+	line-height: 90px;
+	letter-spacing: -8px;
+  }
+  
+  .title-left {
+	font-weight: 700;
+	color: transparent;
+	font-size: 120px;
+	background: url("https://media.istockphoto.com/photos/deep-space-picture-id472809828?b=1&k=20&m=472809828&s=170667a&w=0&h=goMd2OYeK7iAw-c4FdfaRECqjatgw84mgVTx38sBAtE=")
+	  repeat;
+	background-position: 50% 50%;
+	-webkit-background-clip: text;
+	position: relative;
+	line-height: 90px;
+	letter-spacing: -6px;
+  }
+  .subtitle {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 10px;
+  }
+  
+  .subtitle-profile {
+	display: block;
+	text-transform: uppercase;
+	padding-top: 50px;
+  }
+  
 
 .container .cards .imgBx {
   position: absolute;
@@ -178,7 +238,7 @@ a:link {
 
 .social_icons_2 li a:hover {
 	transform: rotate(360deg);
-	background: #015cf5;
+	background: #3400c4;
   }
 
   .social_icons_3 li a:hover {
@@ -212,7 +272,7 @@ a:link {
 
 .blue-box{
 	position: relative;
-	right: 220px;
+	right: 210px;
 	top: 140px;
 }
 
@@ -234,7 +294,6 @@ a:link {
 	line-height: 1;
 	color: rgba(200,200,200,.1);
 	background: linear-gradient(90deg, rgba(200,200,200,0), rgba(200,200,200,0.35));
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-weight: 900;
 	z-index: 1;
