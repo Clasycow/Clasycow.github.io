@@ -12,8 +12,7 @@
   cursor: pointer;
   position: relative;
   width: 44vmin;
-  margin-left: 50px;
-  bottom: 600px;
+  float: left;
 }
 
 .text-card:hover:before {
