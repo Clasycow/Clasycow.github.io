@@ -764,6 +764,7 @@ a:link {
 
 #contact {
   overflow: auto;
+  float: left;
 }
 #contact #form {
   width:410px;

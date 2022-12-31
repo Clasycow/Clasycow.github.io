@@ -11,7 +11,7 @@ $email = $_POST['email'];
 	if (($curText) != '') {
 	    $message .= "<br><br><em>" . $curText . "</em><br><br><br>";
 	}
-	$message .= "<a href='mailto:$email?Subject=clasycow.github.io.com Website Visitor Inquiry' target='_top'>Reply</a> directly to this email to contact the inquiring party.";
+	$message .= "<a href='mailto:$email?Subject=http://clasycow.github.io.com Website Visitor Inquiry' target='_top'>Reply</a> directly to this email to contact the inquiring party.";
 	$message .= "</body></html>";
 
 
@@ -33,7 +33,7 @@ $email = $_POST['email'];
 
 	$to = 'clasycow@outlook.com';
 
-	$subject = 'clasycow.github.io Website Visitor Inquiry';
+	$subject = 'http://clasycow.github.io Website Visitor Inquiry';
 
 	$headers = "From: " . $cleanedFrom . "\r\n";
 	$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
@@ -45,7 +45,7 @@ $email = $_POST['email'];
 <HTML>
 <HEAD>
 <META HTTP-EQUIV="Refresh"
-      CONTENT="5; URL=https://clasycow.github.io">
+      CONTENT="5; URL=http://clasycow.github.io">
 </HEAD>
 <BODY LINK=BLUE ALINK=BLUE VLINK=BLUE>
 <BR><BR>
