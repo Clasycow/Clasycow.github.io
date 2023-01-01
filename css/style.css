@@ -758,194 +758,230 @@ a:link {
 	word-spacing: 100vw;
   }
 
+  .title2 h2 {
+	font-size: 32px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	color: #e5ebec;
+	margin: 20px 0
+}
+
+@media screen and (max-width:768px) {
+	.title2 h2 {
+		margin: 40px 0;
+		font-size: 28px
+	}
+}
 #contact {
-  background-color: #6a9ac400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background: rgba(17, 17, 17, 0);
+	padding: 50px 0;
 }
 
-.contact-box {
-  width: clamp(100px, 90%, 1000px);
-  margin: 80px 50px;
-  display: flex;
-  flex-wrap: wrap;
+.contact-us {
+	padding: 50px;
+	background: rgba(0, 0, 0, 0.5);
+	border: 30px solid rgba(30, 30, 30, 0.7);
+	border-radius: 10px;
+	margin: 50px 0
 }
 
-.contact-links, .contact-form-wrapper {
-  width: 50%;
-  padding: 8% 5% 10% 5%;
+.contact-us input {
+	font-size: 17px
 }
 
-
-.contact-links {
-  background-color: #1f2e43;
-  background:
-    radial-gradient(
-      circle at 55% 92%, #426691 0 12%, transparent 12.2%
-    ), 
-    radial-gradient(
-      circle at 94% 72%, #426691 0 10%, transparent 10.2%
-    ), 
-    radial-gradient(
-      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
-    ), 
-    radial-gradient(
-      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
-    ), 
-    #1f2e43;
-  border-radius: 10px 0 0 10px;
+.contact-us select {
+	font-size: 17px
 }
 
-.contact-form-wrapper {
-  background-color: #ffffff8f;
-  border-radius: 0 10px 10px 0;
+.form-group {
+    width: 450px;
 }
 
-@media only screen and (max-width: 800px) {
-  .contact-links, .contact-form-wrapper {
-    width: 100%;
-  }
-  
-  .contact-links {
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .contact-form-wrapper {
-    border-radius: 0 0 10px 10px;
-  }
+.contact-us textarea {
+	font-size: 17px;
+	resize: none
 }
 
-@media only screen and (max-width: 400px) {
-  .contact-box {
-    width: 95%;
-    margin: 8% 5%;
-  }
+.contact-us .form-control:focus {
+	border-color: #f76a3c;
+	box-shadow: 0 0 10px #f76a3c;
 }
 
-h2 {
-  font-family: 'Arimo', sans-serif;
-  color: #fff;
-  font-size: clamp(30px, 6vw, 60px);
-  letter-spacing: 2px;
-  text-align: center;
-  transform: scale(.95, 1);
+.buttonform {
+	background: #191919;
+	border: 2px solid #fff;
+	padding: 5px 10px;
+	width: 100px;
+	color: #e8e8e8;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 50px;
+.buttonform:hover {
+	background: #050505;
+	color: #fff
 }
 
-.link {
-  margin: 10px;
-  cursor: pointer;
+.buttonform:focus {
+	outline: 0;
 }
 
-img {
-  width: 45px;
-  height: 45px;
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #0006);
-  transition: 0.2s;
-  user-select: none;
+.contact-details {
+	padding-top: 20px;
+	border-left: 1px solid #fff
 }
 
-img:hover {
-  transform: scale(1.1, 1.1);
+.contact-list {
+	list-style-type: none;
+	margin-left: 60px
 }
 
-img:active {
-  transform: scale(1.1, 1.1);
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #222)
-    sepia(0.3);
+@media screen and (max-width:768px) {
+	.contact-us {
+		padding: 20px;
+		margin: 15px 0;
+		border: 4px solid rgba(30, 30, 30, 0.5);
+	}
 }
 
-.form-item {
-  position: relative;
+@media only screen and (min-width:768px) and (max-width:1024px) {
+	.contact-list {
+		list-style-type: none;
+		margin-left: 5px
+	}
+	.contact-details {
+		padding-top: 20px
+	}
 }
 
-label, input, textarea {
-  font-family: 'Poppins', sans-serif;
+.contact-list li {
+	line-height: 4;
+	color: #aaa
 }
 
-label {
-  position: absolute;
-  top: 10px;
-  left: 2%;
-  color: #999;
-  font-size: clamp(14px, 1.5vw, 18px);
-  pointer-events: none;
-  user-select: none;
+.contact-list i {
+	font-size: 24px;
 }
 
-input, textarea {
-  width: 100%;
-  outline: 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 12px;
-  font-size: clamp(15px, 1.5vw, 18px);
+.contact-text {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	letter-spacing: 1.9px;
+	color: #bbb
 }
 
-input:focus+label, 
-input:valid+label, 
-textarea:focus+label, 
-textarea:valid+label {
-  font-size: clamp(13px, 1.3vw, 16px);
-  color: #777;
-  top: -20px;
-  transition: all .225s ease;
+.place {
+	margin-left: 44px
 }
 
-.submit-btn {
-  background-color: #fd917e;
-  filter: drop-shadow(2px 2px 3px #0003);
-  color: #fff;
-  font-family: "Poppins",sans-serif;
-  font-size: clamp(16px, 1.6vw, 18px);
-  display: block;
-  padding: 12px 20px;
-  margin: 2px auto;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.2s;
+.phone {
+	margin-left: 38px
 }
 
-.submit-btn:hover {
-  transform: scale(1.1, 1.1);
+.gmail {
+	margin-left: 31px
 }
 
-.submit-btn:active {
-  transform: scale(1.1, 1.1);
-  filter: sepia(0.5);
+.contact-text a {
+	color: #bbb;
+	text-decoration: none;
+	transition-duration: .2s
 }
 
-@media only screen and (max-width: 800px) {
-  h2 {
-    font-size: clamp(40px, 10vw, 60px);
-  }
+.contact-text a:hover {
+	color: #fff;
+	text-decoration: none
 }
 
-@media only screen and (max-width: 400px) {
-  h2 {
-    font-size: clamp(30px, 12vw, 60px);
-  }
-  
-  .links {
-    padding-top: 30px;
-  }
-  
-  img {
-    width: 38px;
-    height: 38px;
-  }
+.social-media-list {
+	position: relative;
+	font-size: 2.3rem;
+	text-align: center;
+	width: 100%
+}
+
+.social-media-list li a {
+	color: #fff
+}
+
+.social-media-list li {
+	position: relative;
+	top: 0;
+	left: -20px;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	margin: 16px auto 0;
+	line-height: 50px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #1b1b1b;
+	transition: all .2s ease-in-out
+}
+
+.social-media-list li:hover {
+	background-color: #fff;
+	transform: scale(1.12)
+}
+
+.social-media-list li:hover a {
+	color: #111
+}
+
+@media screen and (max-width:768px) {
+
+	.contact-details {
+		border-left: none
+	}
+	.contact-list {
+		margin: 0 auto;
+		padding: 0
+	}
+	.list-item {
+		line-height: 3;
+		color: #aaa
+	}
+	.place {
+		margin-left: 32px
+	}
+	.phone {
+		margin-left: 24px
+	}
+	.gmail {
+		margin-left: 18px
+	}
+	.contact-text {
+		font-size: 17px
+	}
+	.social-media-list li {
+		height: 40px;
+		width: 40px;
+		line-height: 40px
+	}
+	.social-media-list li:after {
+		width: 40px;
+		height: 40px;
+		line-height: 40px
+	}
+}
+
+@media screen and (max-width:320px) {
+	.contact-text {
+		font-size: 15px
+	}
+	.place {
+		margin-left: 22px
+	}
+	.phone {
+		margin-left: 14px
+	}
+	.gmail {
+		margin-left: 7px
+	}
+}
+
+.error {
+	color: red;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
