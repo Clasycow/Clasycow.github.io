@@ -1,102 +1,154 @@
-(function($) { "use strict";
- 
- 	//Parallax            
-              
-	function scrollBanner() {
-	  $(document).on('scroll', function(){
-      var scrollPos = $(this).scrollTop();
-        $('.parallax-fade-top').css({
-          'top' : (scrollPos/2)+'px',
-          'opacity' : 1-(scrollPos/700)
-        });
-        $('.parallax-00').css({
-          'top' : (scrollPos/-3.5)+'px'
-        });
-        $('.parallax-01').css({
-          'top' : (scrollPos/-2.8)+'px'
-        });
-        $('.parallax-top-shadow').css({
-          'top' : (scrollPos/-2)+'px'
-        });
-      });    
-	  }
-	scrollBanner();	              
-
-	//Page cursors
-
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-        t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px", 
-		i.style.left = n.clientX + "px", 
-		i.style.top = n.clientY + "px"
+// Header Underline https://codepen.io/alphardex/pen/JjoqbNP
+var underlineMenuItems = document.querySelectorAll(".underline-menu li");
+underlineMenuItems[0].classList.add("active");
+underlineMenuItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        underlineMenuItems.forEach(function (item) { return item.classList.remove("active"); });
+        item.classList.add("active");
     });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
+});
+// Full Page Burger Navigation https://codepen.io/alphardex/pen/NWPBwYe
+var burgerMenuToggle = document.querySelector("#burger-toggle");
+var burgerMenuLinks = document.querySelectorAll(".burger-nav li a");
+burgerMenuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        burgerMenuToggle.checked = false;
+    });
+});
+// Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr
+var cursor = document.querySelector(".cursor");
+var cursorBorder = document.querySelector(".cursor-border");
+var getXY = function (event, element) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var rect = element.getBoundingClientRect();
+    x -= rect.width / 2;
+    y -= rect.height / 2;
+    return [x, y];
+};
+document.addEventListener("mouseenter", function (e) {
+    cursor.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 300,
+        fill: "forwards"
+    });
+    cursorBorder.animate([
+        {
+            opacity: 0
+        },
+        {
+            opacity: 0.8
+        }
+    ], {
+        duration: 300,
+        fill: "forwards"
+    });
+});
+document.addEventListener("mousemove", function (e) {
+    var _a = getXY(e, cursor), cursorX = _a[0], cursorY = _a[1];
+    var _b = getXY(e, cursorBorder), cursorBorderX = _b[0], cursorBorderY = _b[1];
+    var targetName = e.target.tagName;
+    if (targetName === "A" || targetName === "LABEL" || targetName === "BUTTON") {
+        cursorBorder.classList.add("on-focus");
     }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
+    else {
+        cursorBorder.classList.remove("on-focus");
     }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
+    cursor.animate([{ transform: "translate(".concat(cursorX, "px, ").concat(cursorY, "px)") }, { transform: "translate(".concat(cursorX, "px, ").concat(cursorY, "px)") }], {
+        duration: 300,
+        fill: "forwards",
+        delay: 50
+    });
+    cursorBorder.animate([{ transform: "translate(".concat(cursorBorderX, "px, ").concat(cursorBorderY, "px)") }, { transform: "translate(".concat(cursorBorderX, "px, ").concat(cursorBorderY, "px)") }], {
+        duration: cursorBorder.classList.contains("on-focus") ? 1500 : 300,
+        fill: "forwards",
+        delay: 150
+    });
+});
+document.addEventListener("mouseleave", function (e) {
+    cursor.animate([{ opacity: 0.8 }, { opacity: 0 }], {
+        duration: 500,
+        fill: "forwards"
+    });
+    cursorBorder.animate([
+        {
+            opacity: 0.8
+        },
+        {
+            opacity: 0
+        }
+    ], {
+        duration: 500,
+        fill: "forwards"
+    });
+});
+// Cross Bar Glitch Text https://codepen.io/alphardex/pen/VwLLLNG
+var random = function (min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+};
+var crossBarGlitchTexts = document.querySelectorAll(".cross-bar-glitch");
+crossBarGlitchTexts.forEach(function (text) {
+    var content = text.textContent;
+    text.textContent = "";
+    var slice = text.dataset.slice;
+    var glitchText = document.createElement("div");
+    glitchText.className = "glitch";
+    glitchText.style.setProperty("--slice-count", slice);
+    for (var i = 0; i <= Number(slice); i++) {
+        var span = document.createElement("span");
+        span.textContent = content;
+        span.style.setProperty("--i", "".concat(i + 1));
+        if (i !== Number(slice)) {
+            span.style.animationDelay = "".concat(800 + random(100, 300), "ms");
+        }
+        glitchText.append(span);
     }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }              
-              
-  
-//Scroll back to top
-              
-$(document).ready(function() {	
-		var offset = 300;
-		var duration = 400;
-		jQuery(window).on('scroll', function() {
-			if (jQuery(this).scrollTop() > offset) {
-				jQuery('.scroll-to-top').addClass('active-arrow');
-			} else {
-				jQuery('.scroll-to-top').removeClass('active-arrow');
-			}
-		});				
-		jQuery('.scroll-to-top').on('click', function(event) {
-			event.preventDefault();
-			jQuery('html, body').animate({scrollTop: 0}, duration);
-			return false;
-		})
-  
-  		
-		/* Hero Case study images */			
-		
-		$('.case-study-name:nth-child(1)').on('mouseenter', function() {
-			$('.case-study-name.active').removeClass('active');
-			$('.case-study-images li.show').removeClass("show");
-			$('.case-study-images li:nth-child(1)').addClass("show");
-			$('.case-study-name:nth-child(1)').addClass('active');
-		})
-		$('.case-study-name:nth-child(2)').on('mouseenter', function() {
-			$('.case-study-name.active').removeClass('active');
-			$('.case-study-images li.show').removeClass("show");
-			$('.case-study-images li:nth-child(2)').addClass("show");
-			$('.case-study-name:nth-child(2)').addClass('active');
-		})
-		$('.case-study-name:nth-child(3)').on('mouseenter', function() {
-			$('.case-study-name.active').removeClass('active');
-			$('.case-study-images li.show').removeClass("show");
-			$('.case-study-images li:nth-child(3)').addClass("show");
-			$('.case-study-name:nth-child(3)').addClass('active');
-		})
-		$('.case-study-name:nth-child(4)').on('mouseenter', function() {
-			$('.case-study-name.active').removeClass('active');
-			$('.case-study-images li.show').removeClass("show");
-			$('.case-study-images li:nth-child(4)').addClass("show");
-			$('.case-study-name:nth-child(4)').addClass('active');
-		})
-		$('.case-study-name:nth-child(1)').trigger('mouseenter')
-  
-  });            
-              
-})(jQuery);
+    text.appendChild(glitchText);
+    var bars = document.createElement("div");
+    bars.className = "bars";
+    for (var i = 0; i < 5; i++) {
+        var bar = document.createElement("div");
+        bar.className = "bar";
+        bars.append(bar);
+    }
+    text.append(bars);
+});
+// Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
+var staggeredRiseInTexts = document.querySelectorAll(".staggered-rise-in");
+staggeredRiseInTexts.forEach(function (text) {
+    var letters = text.textContent.split("");
+    text.textContent = "";
+    letters.forEach(function (letter, i) {
+        var span = document.createElement("span");
+        span.textContent = letter;
+        span.style.animationDelay = "".concat(i / 20, "s");
+        text.append(span);
+    });
+});
+// Observe the elements which have animations to fire.
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, { rootMargin: "0px 0px -140px" });
+var titles = document.querySelectorAll(".titles > *");
+titles.forEach(function (title) { return observer.observe(title); });
+var paragraphs = document.querySelectorAll("p");
+paragraphs.forEach(function (p) { return observer.observe(p); });
+var profileCards = document.querySelectorAll(".card");
+profileCards.forEach(function (profileCard) { return observer.observe(profileCard); });
+var timeline = document.querySelector(".timeline");
+observer.observe(timeline);
+var marker = document.querySelector(".marker");
+observer.observe(marker);
+var placeName = document.querySelector(".place-name");
+observer.observe(placeName);
+var map = document.querySelector("#map");
+observer.observe(map);
+var sponsorList = document.querySelectorAll(".sponsors-list li");
+sponsorList.forEach(function (sponsor) { return observer.observe(sponsor); });
+// Baidu Map API
+var bmap = new BMap.Map("map");
+var point = new BMap.Point(113.950148, 22.553891);
+bmap.centerAndZoom(point, 18);
