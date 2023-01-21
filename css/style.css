@@ -74,13 +74,26 @@
 }
  .logo {
 	 display: flex;
+	 z-index: 1;
 	 align-items: center;
 	 font-size: 24px;
 	 line-height: 50px;
 	 text-align: center;
 	 text-decoration: none;
 	 color: white;
+	 position: relative;
 }
+
+.logo::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0);
+ }
+
  .logo img {
 	 width: 50px;
 	 height: 50px;
@@ -406,15 +419,15 @@
 	 transition: 0.3s;
 }
  .cursor {
-	 background: #ff4b4b;
+	 background: #ffffff;
 }
  .cursor-border {
 	 padding: 2rem;
-	 border: 0.1rem solid #ff4b4b;
+	 border: 0.1rem solid #ffffff;
 }
  .cursor-border.on-focus {
 	 padding: 0.5rem;
-	 background: rgba(219, 51, 51, 0.5);
+	 background: rgba(255, 255, 255, 0.5);
 	 border-color: transparent;
 }
  .cross-bar-glitch {
@@ -902,9 +915,21 @@
 	 text-align: center;
 	 background: fixed;
 	 background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(https://images.pexels.com/photos/2473183/pexels-photo-2473183.jpeg?auto=compress&cs=tinysrgb&w=1600);
-	 background-position: center;
 	 background-size: cover;
+	 background-position: center center;
+	 position: relative;
 }
+
+.hero-section::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.068);
+  }
+
  main .hero-section h1 {
 	 margin-bottom: 8px;
 	 font-size: 46px;
@@ -1123,14 +1148,27 @@ main .normal-section-about .titles {
 	background-size: cover;
 	background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(https://img.freepik.com/free-vector/gradient-dark-dynamic-lines-background_23-2148995950.jpg); 
 	display: flex;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
 	height: auto;
 	justify-content: center;
 	padding: var(--spacing-xxl) var(--spacing-l);
   }
+
+  .hero-section-card::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.178);
+  }
   
   .card-grid{
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-column-gap: var(--spacing-l);
 	grid-row-gap: var(--spacing-l);
 	max-width: var(--width-container);
@@ -1139,13 +1177,13 @@ main .normal-section-about .titles {
   
   @media(min-width: 540px){
 	.card-grid{
-	  grid-template-columns: repeat(2, 1fr); 
+	  grid-template-columns: repeat(4, 1fr); 
 	}
   }
   
   @media(min-width: 960px){
 	.card-grid{
-	  grid-template-columns: repeat(4, 1fr); 
+	  grid-template-columns: repeat(2, 1fr); 
 	}
   }
   
