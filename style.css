@@ -1,134 +1,135 @@
-@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
-    color: inherit;
+  box-sizing: border-box;
+  user-select: none;
 }
 
-.cursor, .cursor-border {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0;
-    will-change: transform;
-    transition: 0.3s;
+a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "sans-seriff", sans-serif;
+  transition: color 0.3s, text-shadow 0.3s;
 }
-.cursor {
-    background: #ffffff;
+
+a:hover {
+  text-shadow: 0 0 10px currentColor;
 }
-.cursor-border {
-    padding: 2rem;
-    border: 0.1rem solid #ffffff;
+
+a:nth-child(1):hover {
+  color: #e57373;
 }
-.cursor-border.on-focus {
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-color: transparent;
+
+a:nth-child(2):hover {
+  color: #81c784;
+}
+
+a:nth-child(3):hover {
+  color: #64b5f6;
+}
+
+a:nth-child(4):hover {
+  color: #ffb74d;
+}
+
+a:nth-child(5):hover {
+  color: #ba68c8;
 }
 
 body {
-    background-image: linear-gradient(120deg, #0d0053 0%, #000000 100%);
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 
-h3 {
-    font-size: 10vw;
-    text-align: center;
-    position: fixed;
-    width: 100vw;
-    z-index: 1;
-    color: #ffffff26;
-    text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: "Montserrat", sans-serif;
+h2 {
+  font-size: clamp(1rem, 5vw, 5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  color: #cccccc;
+  width: 90vw;
+  max-width: 1200px;
 }
 
-div {
-    background: rgba(0, 0, 0, 0);
-    width: 70vw;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0 auto;
-    padding: 30px 30px 10px;
-    box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
-    z-index: 3;
+h2:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px #cccccc;
 }
 
-P {
-    font-family: "Share Tech Mono", monospace;
-    color: #f5f5f5;
-    margin: 0 0 20px;
-    font-size: 17px;
-    line-height: 1.2;
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  z-index: 3;
+  height: 7em;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.66rem, 2vw, 1rem);
+  letter-spacing: 0.5em;
 }
 
-span {
-    color: #f0c674;
+.section {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  visibility: hidden;
+}
+.section .wrapper-outer,
+.section .wrapper-inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.section .background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+.section .background h2 {
+  z-index: 2;
+}
+.section .background .clip-text {
+  overflow: hidden;
 }
 
-i {
-    color: #8abeb7;
+.first .background {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.692) 0%, rgba(0, 0, 0, 0.39) 100%), url("https://mlangeleno.com/get/files/image/galleries/best-sunsets-los-angeles.jpg");
 }
 
-div a {
-    text-decoration: none;
+.second .background {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 50%, rgba(0, 0, 0, 0.39) 100%), url("https://i.ibb.co/4f8C5ZT/hero.png");
 }
 
-b {
-    color: #81a2be;
+.third .background {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.39) 100%), url("https://i.ibb.co/YTyKwvG/Screenshot-2023-11-06-150713-1.png");
 }
 
-a.avatar {
-    position: fixed;
-    bottom: 15px;
-    right: -100px;
-    -webkit-animation: slide 0.5s 4.5s forwards;
-            animation: slide 0.5s 4.5s forwards;
-    display: block;
-    z-index: 4
+.fourth .background {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.39) 100%), url("https://images.unsplash.com/photo-1617412327653-c29093585207?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNzU2MDgzMQ&ixlib=rb-1.2.1&q=75&w=1920");
 }
 
-a.avatar img {
-    border-radius: 100%;
-    width: 44px;
-    border: 2px solid white;
+.fifth .background {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.39) 100%), url("https://images.unsplash.com/photo-1617141636403-f511e2d5dc17?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODAzMjc4Mw&ixlib=rb-1.2.1&q=75w=1920");
+  background-position: 50% 45%;
 }
 
-@-webkit-keyframes slide {
-    from {
-        right: -100px;
-        transform: rotate(360deg);
-        opacity: 0;
-    }
-    to {
-        right: 15px;
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes slide {
-    from {
-        right: -100px;
-        transform: rotate(360deg);
-        opacity: 0;
-    }
-    to {
-        right: 15px;
-        transform: rotate(0deg);
-        opacity: 1;
-    }
+h2 * {
+  will-change: transform;
 }
