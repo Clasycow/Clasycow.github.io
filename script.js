@@ -87,7 +87,7 @@ const App = () => {
     React.createElement("a", { href: "#fourth" }, "4 "), /*#__PURE__*/
     React.createElement("a", { href: "fifth" }, "5 "))), /*#__PURE__*/
     
-    React.createElement(Section, { id: "first", title: "Jimi Blackmore", className: "first", bgUrl: "https://mlangeleno.com/get/files/image/galleries/best-sunsets-los-angeles.jpg" }), /*#__PURE__*/
+    React.createElement(Section, { id: "first", title: "Andrew Smith", className: "first", bgUrl: "https://mlangeleno.com/get/files/image/galleries/best-sunsets-los-angeles.jpg" }), /*#__PURE__*/
     React.createElement(Section, { id: "second", title: "Experience in Front-End Coding", className: "second", bgUrl: "https://i.ibb.co/4f8C5ZT/hero.png" }), /*#__PURE__*/
     React.createElement(Section, { id: "third", title: "Back-End Coding", className: "third", bgUrl: "https://i.ibb.co/YTyKwvG/Screenshot-2023-11-06-150713-1.png" }), /*#__PURE__*/
     React.createElement(Section, { id: "fourth", title: " and Linux systems", className: "fourth", bgUrl: "https://i.ibb.co/PznCkRM/banner-2021-2-release-1.jpg" }), /*#__PURE__*/
